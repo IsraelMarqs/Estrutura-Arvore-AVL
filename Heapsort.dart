@@ -18,20 +18,29 @@ class Heapsort{
   void removeSmallest(){
     heap[1] = heap.last;
     heap.removeLast();
-    for (var x=1; x<=altura(); x++){
-      if(heap[x*2] < heap[x*2+1]){
-        if(heap[x]>heap[x*2]){
-          int aux = heap[x];
-          heap[x] = heap[x*2];
-          heap[x*2] = aux;
+    int ind = 1;
+    try{
+      for (var x=1; x<=altura(); x++){
+        if(heap[ind*2] < heap[ind*2+1]){
+          if(heap[ind]>heap[ind*2]){
+            int aux = heap[ind];
+            heap[ind] = heap[ind*2];
+            heap[ind*2] = aux;
+            ind = ind*2;
+            continue;
+          }
         }
-      }else{
-        if(heap[x] > heap[x*2+1]){
-          int aux = heap[x];
-          heap[x] = heap[x*2+1];
-          heap[x*2+1] = aux;
+        if(heap[ind*2] > heap[ind*2+1]){
+          if(heap[ind] > heap[ind*2+1]){
+            int aux = heap[ind];
+            heap[ind] = heap[ind*2+1];
+            heap[ind*2+1] = aux;
+            ind = ind*2+1;
+            continue;
+          }
         }
+        break;
       }
-    }
+    }catch(e){}
   }
 }
