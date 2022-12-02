@@ -29,6 +29,7 @@ class Heapsort{
             ind = ind*2;
             continue;
           }
+          break;
         }
         if(heap[ind*2] > heap[ind*2+1]){
           if(heap[ind] > heap[ind*2+1]){
@@ -38,8 +39,8 @@ class Heapsort{
             ind = ind*2+1;
             continue;
           }
+          break;
         }
-        break;
       }
     }catch(e){}
   }
