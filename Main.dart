@@ -9,6 +9,7 @@ void main(){
   heapsort.insert(6);
   heapsort.insert(7);
   heapsort.insert(8);
+  heapsort.insert(9);
   print(heapsort.heap);
   heapsort.removeSmallest();
   print(heapsort.heap);
